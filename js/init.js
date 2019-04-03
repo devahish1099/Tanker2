@@ -5,13 +5,15 @@ const PI = Math.PI ;
 const tankCanvas = document.getElementById("tankCanvas");
 const bulletCanvas = document.getElementById("bulletCanvas");
 const backgroundCanvas = document.getElementById("backgroundCanvas");
+const grassCanvas = document.getElementById("grassCanvas");
 
-tankCanvas.width    =   bulletCanvas.width    =   backgroundCanvas.width = WIDTH;
-tankCanvas.height   =   bulletCanvas.height   =   backgroundCanvas.height = HEIGHT;
+tankCanvas.width    =   bulletCanvas.width    =   backgroundCanvas.width  =  grassCanvas.width = WIDTH;
+tankCanvas.height   =   bulletCanvas.height   =   backgroundCanvas.height  =  grassCanvas.height = HEIGHT;
 
 const tankCtx = tankCanvas.getContext("2d");
 const bulletCtx = bulletCanvas.getContext("2d");
 const backGroundCtx = backgroundCanvas.getContext("2d");
+const grassCtx = grassCanvas.getContext("2d");
 
 const BGCOLOR = "rgba(255, 255, 255, 1)";
 const BULLET_SPEED = 10 ;
@@ -32,7 +34,7 @@ let WorldSpace = {
 
 const ImageLoader = new ImageLoaderClass();
 const audioloader = new AudioLoader();
-const blastSound = audioloader.load('res/sounds/blast.mp3');
+//const destroySound = audioloader.load('res/sounds/destroy.mp3');
 const fireSound = audioloader.load('res/sounds/fire.wav');
 
 let playerIsAlive = true;
